@@ -286,7 +286,8 @@ a:hover .icon {
     width: calc((100% - 30px * 2) / 3);
     margin-right: 30px;
     margin-left: 0;
-}
+    position: relative;
+}  
 
 .foto-program {
     width: 370px;
@@ -294,6 +295,7 @@ a:hover .icon {
 }
 
 .section-cod {
+    position: absolute;
     margin-top: 27px;
     margin-bottom: 27px;
 
@@ -489,7 +491,7 @@ a:hover .icon {
 }
 
 .icons {
-   padding-left: 12px;
+    padding-left: 12px;
     background: rgba(255, 255, 255, 0.1);
     background-position: center;
 }
@@ -595,6 +597,14 @@ a:hover .icon {
 .flex-element {
     width: 370px;
     margin: 15px;
+    transition: 250ms ease;
+    transition-property: box-shadow, transform;
+    overflow: hidden;
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.12);
+}
+
+.flex-element:hover {
+    transform: translateY(-10px);
     box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.12);
 }
 
@@ -634,6 +644,12 @@ a:hover .icon {
 
 .text {
     position: absolute;
+    display: flex;
+    transform: translateX(0) translateY(0);
+    opacity: 0;
+    transition: 250ms ease;
+    transition-property: opacity, transform;
+
     top: 0;
     left: 0;
     right: 0;
