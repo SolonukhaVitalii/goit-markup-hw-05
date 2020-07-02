@@ -56,6 +56,14 @@ a {
     text-decoration: none;
 }
 
+.a:hover {
+    color: var(--primary-white-color);
+}
+
+.a:hover svg {
+    fill:  var(--primary-white-color);
+}
+
 .logo {
     width: 153px;
     margin-right: 85px;
@@ -135,8 +143,9 @@ a {
 .icon-mail {
     fill: var(--primary-text-color);
     margin-right: 5px;
+    vertical-align: middle;
 }
-
+ 
 .icon-mail:hover,
 .icon-tel:hover {
     fill: var(--accent-color);
@@ -153,6 +162,7 @@ a {
 .section-hero {
     max-width: 1600px;
     height: 600px;
+    display: flex;
     margin-left: auto;
     margin-right: auto;
     outline: 1px solid black;
@@ -169,19 +179,13 @@ a {
 }
 
 .container-hero {
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    max-width: 696px;
     text-align: center;
-    padding-top: 94px;
-    padding-bottom: 94px;
 }
 
 .hero-title {
-    width: 696px;
-    margin-left: 250px;
-    margin-top: 200px;
     margin-bottom: 30px;
-    
     color: var(--primary-white-color);
     font-weight: 900;
     font-size: 44px;
@@ -195,7 +199,6 @@ a {
     display: inline-block;
     min-width: 200px;
     height: 50px;
-    margin-bottom: 200px;
 
     color: var(--primary-white-color);
     border: 1px solid var(--accent-color);
@@ -387,7 +390,7 @@ a {
 }
 
 .icon:hover {
-    fill: var(--primary-white-color);;
+    fill: var(--primary-white-color);
 }
 
 .container-client {
@@ -587,6 +590,7 @@ a {
     font-size: 16px;
     line-height: 1.62;
     text-align: center;
+    border: none;
 }
 
 .work-button:hover,
@@ -655,6 +659,7 @@ a {
     background-color: #757575;
     text-align: left;
 }
+
 
 
 
