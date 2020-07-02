@@ -56,12 +56,16 @@ a {
     text-decoration: none;
 }
 
-.a:hover {
-    color: var(--primary-white-color);
+a:hover {
+    color: var(--accent-color);
 }
 
-.a:hover svg {
-    fill:  var(--primary-white-color);
+a:hover svg {
+    fill: var(--accent-color);
+}
+
+a:hover .icon {
+    fill: var(--primary-white-color);
 }
 
 .logo {
@@ -140,22 +144,12 @@ a {
     color: var(--accent-color);
 }
 
-.icon-mail {
+.icon-mail,
+.icon-tel {
     fill: var(--primary-text-color);
     margin-right: 5px;
     vertical-align: middle;
 }
- 
-.icon-mail:hover,
-.icon-tel:hover {
-    fill: var(--accent-color);
-}
-
-.icon-tel {
-    fill: var(--primary-text-color);
-    margin-right: 5px;
-}
-
 
 /*Контейнери*/
 
@@ -389,10 +383,6 @@ a {
     fill: var(--primary-text-color);
 }
 
-.icon:hover {
-    fill: var(--primary-white-color);
-}
-
 .container-client {
     margin-left: auto;
     margin-right: auto;
@@ -431,9 +421,6 @@ a {
     fill: var(--primary-text-color);
 }
 
-.icon-logo:hover {
-    fill: var(--accent-color);
-}
 
 /*Футер*/
 
@@ -646,6 +633,10 @@ a {
 }
 
 .text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     width: 332px;
     margin-top: auto;
     margin-bottom: auto;
