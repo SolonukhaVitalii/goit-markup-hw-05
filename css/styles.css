@@ -4,6 +4,7 @@
     --accent-color: #2196F3;
     --primary-white-color: #ffffff;
     --link-color: #000000;
+    --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*Стили для index.html*/
@@ -54,6 +55,7 @@ body {
 
 a {
     text-decoration: none;
+    transition: color 250ms var(--timing-function), fill 250ms var(--timing-function);
 }
 
 a:hover {
@@ -106,6 +108,7 @@ a:hover .icon {
     font-size: 14px;
     line-height: 1.14px;
     letter-spacing: 0.02em;
+    transition: color 250ms var(--timing-function);
 }
 
 .site-nav .link:hover,
@@ -115,6 +118,26 @@ a:hover .icon {
 
 .site-nav .link .current {
     color: var(--accent-color);
+}
+
+.current {
+    position: relative;
+}
+
+.current::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 5px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
+    transition: opacity 250ms var(--timing-function);
+    opacity: 0;
+}
+
+.current:hover::after {
+    opacity: 1;
 }
 
 .contacts {
@@ -133,6 +156,7 @@ a:hover .icon {
     line-height: 1.14;
     letter-spacing: 0.02em;
     font-style: normal;
+    transition: color 250ms var(--timing-function);
 }
 
 .contact:last-child {
@@ -375,6 +399,7 @@ a:hover .icon {
     background-color: var(--primary-white-color);
     align-items: center;
     padding-top: 12px;
+    transition: background-color 250ms var(--timing-function);
 }
 
 .social-link:hover {
@@ -412,6 +437,7 @@ a:hover .icon {
     border-radius: 5%;
     align-items: center;
     padding-left: 60px;
+    transition: border 250ms var(--timing-function);
 }
 
 .box-icon:hover {
@@ -580,6 +606,8 @@ a:hover .icon {
     line-height: 1.62;
     text-align: center;
     border: none;
+    cursor: pointer;
+    transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function);
 }
 
 .work-button:hover,
@@ -597,15 +625,29 @@ a:hover .icon {
 .flex-element {
     width: 370px;
     margin: 15px;
-    transition: 250ms ease;
-    transition-property: box-shadow, transform;
-    overflow: hidden;
     box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
 }
 
-.flex-element:hover {
-    transform: translateY(-10px);
-    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.12);
+.product-foto {
+    position: relative;
+}
+
+.product-foto::before {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-color);
+    transform: translateY(100%);
+    transition: transform 250ms var(--timing-function);
+}
+
+.flex-element:hover .product-foto::before {
+    transform: translateY(0);
 }
 
 .foto {
@@ -643,13 +685,6 @@ a:hover .icon {
 }
 
 .text {
-    position: absolute;
-    display: flex;
-    transform: translateX(0) translateY(0);
-    opacity: 0;
-    transition: 250ms ease;
-    transition-property: opacity, transform;
-
     top: 0;
     left: 0;
     right: 0;
