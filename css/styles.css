@@ -5,6 +5,7 @@
     --primary-white-color: #ffffff;
     --link-color: #000000;
     --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --timing: 250ms;
 }
 
 /*Стили для index.html*/
@@ -55,7 +56,7 @@ body {
 
 a {
     text-decoration: none;
-    transition: color 250ms var(--timing-function), fill 250ms var(--timing-function);
+    transition: color var(--timing), var(--timing-function), fill var(--timing), var(--timing-function);
 }
 
 a:hover {
@@ -108,7 +109,7 @@ a:hover .icon {
     font-size: 14px;
     line-height: 1.14px;
     letter-spacing: 0.02em;
-    transition: color 250ms var(--timing-function);
+    transition: color var(--timing), var(--timing-function);
 }
 
 .site-nav .link:hover,
@@ -129,7 +130,7 @@ a:hover .icon {
     position: absolute;
     display: block;
     width: 100%;
-    height: 2px;
+    height: 4px;
     left: 0;
     top: 32px;
     border-radius: 2px;
@@ -138,7 +139,19 @@ a:hover .icon {
     opacity: 0;
 }
 
-.current:hover::after {
+.current:hover::after,
+.current:focus::after {
+    opacity: 1;
+}
+
+.link-current:after  {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 4px;
+    left: 0;
+    top: 32px;
+    border-bottom: 2px solid var(--accent-color);
     opacity: 1;
 }
 
@@ -158,7 +171,7 @@ a:hover .icon {
     line-height: 1.14;
     letter-spacing: 0.02em;
     font-style: normal;
-    transition: color 250ms var(--timing-function);
+    transition: color var(--timing), var(--timing-function);
 }
 
 .contact:last-child {
@@ -413,7 +426,7 @@ a:hover .icon {
     background-color: var(--primary-white-color);
     align-items: center;
     padding-top: 12px;
-    transition: background-color 250ms var(--timing-function);
+    transition: background-color var(--timing), var(--timing-function);
 }
 
 .social-link:hover {
@@ -451,7 +464,7 @@ a:hover .icon {
     border-radius: 5%;
     align-items: center;
     padding-left: 60px;
-    transition: border 250ms var(--timing-function);
+    transition: border var(--timing), var(--timing-function);
 }
 
 .box-icon:hover {
@@ -530,10 +543,13 @@ a:hover .icon {
     margin-bottom: 20px;
 }
 
+.list-icons {
+    margin-right: 10px;
+}
+
 .icons {
-    padding-left: 12px;
     background: rgba(255, 255, 255, 0.1);
-    background-position: center;
+    padding-left: 12px;
 }
 
  .mail {
@@ -621,7 +637,7 @@ a:hover .icon {
     text-align: center;
     border: none;
     cursor: pointer;
-    transition: background-color 250ms var(--timing-function), color 250ms var(--timing-function);
+    transition: background-color var(--timing), var(--timing-function), color var(--timing), var(--timing-function);
 }
 
 .work-button:hover,
@@ -629,7 +645,6 @@ a:hover .icon {
     color: var(--primary-white-color);
     background-color: var(--accent-color);
 }
-
 .flex-container {
     display: flex;
     flex-wrap: wrap;
@@ -640,6 +655,8 @@ a:hover .icon {
     width: 370px;
     height: 404px;
     margin: 15px;
+    border: 1px solid #EEEEEE;
+    overflow: hidden;
     position: relative;
 }
 
@@ -728,7 +745,6 @@ a:hover .icon {
     line-height: 1.56;
     text-align: left;
 }
-
 
 
 
